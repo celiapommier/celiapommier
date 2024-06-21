@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="À propos | Célia Pommier" description="À propos de Célia Pommier">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos"
+				tagline="Découvrez mon parcours et mes compétences."
+			>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Profil</h2>
+				<div class="content">
+					<p>
+						Mon CDD en tant que chargée de communication au Conseil d'Architecture, d'Urbanisme et de l'Environnement (CAUE) du Calvados étant arrivé à son terme, je suis à la recherche d'une nouvelle opportunité professionnelle. 
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>Licence Langues Étrangères Appliquées (LEA) : Anglais/Espagnol</p>
+					<p>Master LEA parcours Développement Durable : stratégies de concertation et de communication.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Savoir-être</h2>
+				<div class="content">
+					<p>Rigueur, sens de l'organisation, sens de la communication, créativité, capacité d'adaptation, travail en équipe</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Savoir-faire</h2>
+				<div class="content">
+					<p>Outils de création (Wordpress, Elementor, InDesign, Canva, Acrobat Pro, Mailjet, Eventbrite)</p>
+					<p>Outils de gestion (Microsoft Office, Trello, Notion)</p>
+					<p>Trilingue (Français, Anglais, Espagnol)</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
