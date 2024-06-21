@@ -5,9 +5,9 @@ import type { iconPaths } from './IconPaths';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Accueil', href: '/' },
-	{ label: 'Projets', href: '/work/' },
-	{ label: 'À propos', href: '/about/' },
+	{ label: 'Accueil', href: '/celiapommier/' },
+	{ label: 'Projets', href: '/celiapommier/work/' },
+	{ label: 'À propos', href: '/celiapommier/about/' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -43,7 +43,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== '/celiapommier/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
 							href={href}
