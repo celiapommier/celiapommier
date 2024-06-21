@@ -18,7 +18,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href="/celiapommier/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			Célia Pommier
 		</a>
@@ -81,7 +81,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== '/celiapommier/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
 							href={href}
